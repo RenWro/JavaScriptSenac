@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01 - JS</title>
+    <!--Criando nosso primeiro programa em JS-->
+    <script>
+
+        /*
+        //Criando um alerta na pagina
+        alert("olá mundo");//<-- constante
+
+        //Criando varivaeis com "var"
+        var nome;
+
+        //Atribuindo o valor a varivel nome
+        nome = "Vitor Valles";
+        alert(nome);
+        alert("ola " +nome+ " ,você está bem?")//<-- para conctenar a frase e vareaveis usa-se o nisal +
+
+        nome = 5+6
+        alert(nome);
+
+        //prompt mostra uma caixa que o usuario escrevera uma informação e essa informação sera atribuida na "variavel"
+        nome=prompt("Digite seu nome:");
+        alert(nome);
+        */
+
+        /*programa troca de valores
+         *versão: v.1
+         *autoria: Ren Wrobleski
+         *Data: 27/03/2024
+         */
+
+        // Operadores aritiméticos
+        /*Exponecional                  -- **
+        *multiplicação                  -- *
+        *Divisão                        -- /
+        *Módulo(Resto da divisão)       -- %
+        *Adição                         -- +
+        *Subtração                      -- -
+        *Incrementar                    -- ++
+        *Decrementar                    -- --
+        /*
+        //Operadores relacionais
+        /*igualdade                     -- ==
+        *igualdade absoluta             -- ===
+        *Diferente de                   -- !=
+        *Difeente de absoluto           -- !==
+        *Maior que                      -- >
+        *menor que                      -- <
+        *maior ou igual a               -- >=
+        *maior ou igual  a              -- <=
+        */
+        //Operadores Lógicos
+        /*
+        *Conjunção "E"                  -- &&
+        *Disjunção "OU"                 --||
+        *Negação "NÃO"                  -- !
+        */
+
+        /* var A, B, TEMP;
+
+        A = prompt("Digite uma cor: ")
+        B = prompt("Digite outra cor: ")
+
+        TEMP= A;
+        A = B;
+        B = TEMP;
+
+        alert("o valor da cor de A é: "+A);
+        alert("O valor da cor de B é"+B);*/
+        /*Crie um programa que após entrada do nome, matéria, notas
+        avaliação 1, trabalho e avaliação 2, calcule a média para
+        este bimestre.No final solte um alerta com nome, matéria e
+        média do bimestre
+        */
+        var nome, materia;
+        let n1,n2,trab, media;
+
+        nome = prompt("Digite o nome do aluno: ");
+        materia = prompt("Digite a matéria: ");
+
+        n1 = parseFloat(prompt("Digite a nota da avaliação 1: "));
+        n2 = parseFloat(prompt("Digite a nota da avaliação 2: "));
+        trab = parseFloat(prompt("Digite a nota do trabalho: "));
+
+        media = (n1+n2+trab) /3
+        alert("Nome: " + nome + "\nMatéria: " + materia + "\nMédia do bimestre: " + media.toFixed(2));
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
