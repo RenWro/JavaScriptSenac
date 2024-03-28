@@ -15,5 +15,7 @@
 
 <ul>
   <li>Programa média</li>
+  <li>Programa Par, Ímpar ou Zero</li>
+  <li>Programa média anual</li>
 </ul>
 
