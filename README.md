@@ -1,8 +1,13 @@
 # Introdução ao JavaScript - Técnico de Informática para Internet
+
+<a href="https://www.alura.com.br/cursos-online-front-end/javascript">JavaScript é a principal linguagem de programação utilizada na construção do front-end de uma aplicação Web, dando vida ao HTML e CSS. Aparece por trás das tecnologias como ReactJS, Next JS, VueJS, Angular e NodeJS.</a>
+
+
 JavaScript é uma linguagem de tipagemdinâmica e fraca:
-<ul> Não é necessário declarar o tipo de uma variável;
-Todas as variáveis são objetos (referência);
-Números são todos reais de 64bits;
+<ul> 
+  <li>Não é necessário declarar o tipo de uma variável;</li>
+  <li>Todas as variáveis são objetos (referência);</li>
+  <li>Números são todos reais de 64bits;</li>
 </ul>
 
 A variável irá “alterar” o seu tipo de dado conforme os valoresforem atribuídos:
