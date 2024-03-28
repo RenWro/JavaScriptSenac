@@ -10,7 +10,7 @@ JavaScript é uma linguagem de tipagemdinâmica e fraca:
   <li>Números são todos reais de 64bits;</li>
 </ul>
 
-A variável irá “alterar” o seu tipo de dado conforme os valoresforem atribuídos:
+Mais sobre o JavaScript <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">aqui</a>
 
 
 
