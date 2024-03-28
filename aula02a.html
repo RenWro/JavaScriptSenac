@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 02 A - JS</title>
+    <script>
+        /*
+        apos receber o nome a matérias ae as notas dos 4 bimestres de um aluno,
+        calcule a sua media final. e imprima o resultado deste aluno.
+        media >= 7 - aprovado
+        media >= 6.5 - conselho
+        media >= 4 - recuperação
+        media < 4 - reprovado
+        no final solte um alerta com nome, matéria, media final e o resultado.
+        */
+        let nome, materia, resultado, nota1, nota2, nota3, nota4, media
+        nome = prompt ("Digite o nome do aluno: ");
+        materia = prompt ("Digite a matéria: ");
+        nota1 = parseFloat(prompt ("Digite a nota 1: "));
+        nota2 = parseFloat(prompt("Digite a nota 2: "));
+        nota3 = parseFloat(prompt("Digite a nota 3: "));
+        nota4 = parseFloat(prompt("Digite a nota 4: "));
+
+
+        if((nota1 < 0 || nota1 > 10) || (nota2 < 0 || nota2 > 10) || (nota3 < 0 || nota3 > 10) || (nota4 < 0 || nota4 > 10) ){
+            alert ("Erro! Todas as notas devem estar em um intervalo entre 0 e 10. Por favor, digite novamente")
+        }else {
+
+            media = (nota1 + nota2 + nota3 + nota4)/4
+
+            if (media >= 7 && media <= 10) {
+                resultado = "aprovado"
+            } else if (media < 7 && media >= 6.5) {
+                resultado = "conselho"
+            } else if (media < 6.5 && media >= 4) {
+                resultado = "recuperação"
+            } else if (media < 4 && media >= 0) {
+                resultado = "reprovado"
+            } //else {
+                //resultado = "reprovado"
+            //}
+            //Desse jeito, 'else if' cobrindo todas as exceções específicadas ou 'else' para cobrir exceções inespecíficas seriam ambos válidos. Vale saber que para se colocar qualquer condição (como média>3) é obrigatório por sintaxe que a condição seja antecedida por "se" ou "if // else if".
+            alert("Nome: " + nome + "\nMatéria: " + materia + "\nMédia anual: " + media.toFixed(2) + "\ne está: " + resultado);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
