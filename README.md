@@ -1,4 +1,5 @@
-# Introdução ao JavaScript - Técnico de Informática para Internet
+# Introdução ao JavaScript 
+Técnico de Informática para Internet
 
 <a href="https://www.alura.com.br/cursos-online-front-end/javascript">JavaScript é a principal linguagem de programação</a> utilizada na construção do front-end de uma aplicação Web, dando vida ao HTML e CSS. Aparece por trás das tecnologias como ReactJS, Next JS, VueJS, Angular e NodeJS.
 
