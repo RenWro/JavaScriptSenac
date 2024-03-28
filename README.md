@@ -1,4 +1,13 @@
 # Introdução ao JavaScript - Técnico de Informática para Internet
+JavaScript é uma linguagem de tipagemdinâmica e fraca:
+<ul> Não é necessário declarar o tipo de uma variável;
+Todas as variáveis são objetos (referência);
+Números são todos reais de 64bits;
+</ul>
+
+A variável irá “alterar” o seu tipo de dado conforme os valoresforem atribuídos:
+
+
 
 <br>
 <ul>
