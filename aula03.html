@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - js</title>
+</head>
+<body>
+    <script>
+        //let numero,resp
+        /*
+        // Estrutura Condicional "se" & "senão" //
+        if ((numero = parseInt(prompt("Digite um numero inteiro: "))) == 0) {
+            alert("zero")
+        }else if(numero % 2 == 0){
+            alert("par!!")
+        }else{
+            alert("impar!!")
+        }
+        
+
+            // Para o uso de banco de dados se usa uma let = "resp" para armazenar a resposta //
+         // Estrutura Condicional "se" & "senão" //
+         if ((numero = parseInt(prompt("Digite um numero inteiro: "))) == 0) {
+            resp = "Zero"
+        }else if(numero % 2 == 0){
+            resp = "par"
+        }else{
+            resp = "impar"
+        }
+        alert(resp + "!!!")
+        */
+        
+        // Exercício //
+        /*
+        * Após receber o nome a matéria e as notas dos 4 bimestres de um aluno,
+        * Calcule á: média final. 
+        * Nas condições de:
+        * media > 10 ou < 0 - media final invalida
+        * media >= 7 - aprovado
+        * media >= 6.5 - conselho
+        * media >= 4 - recuperação
+        * media < 4 - reprovado
+        * No final solte um alert(" nome do aluno, máteria, média final, e o resultado")
+        */
+
+        let nome,matéria,bim1,bim2,bim3,bim4,media,result,i
+
+        nome = prompt("Digite o nome do aluno: ")
+        matéria = prompt("Digite a matéria: ")
+        
+    
+        bim1 = parseFloat(prompt("Digite a nota do 1° bimestres: "))
+        while(bim1 < 0 || bim1 > 10){
+            alert("nota invalida")
+            bim1 = parseFloat(prompt("Digite a nota do 1° bimestres: "))
+        }
+        bim2 = parseFloat(prompt("Digite a nota do 2° bimestres: "))
+        while( bim2 < 0 || bim2 >10){
+            alert("nota invalida")
+            bim2 = parseFloat(prompt("Digite a nota do 2° bimestres: "))
+        }
+        bim3 = parseFloat(prompt("Digite a nota do 3° bimestres: "))
+        while(bim3 < 0 || bim3 >10){
+            alert("nota invalida")
+            bim3 = parseFloat(prompt("Digite a nota do 3° bimestres: "))
+        }
+        bim4 = parseFloat(prompt("Digite a nota do 4° bimestres: "))
+        while(bim4 < 0 || bim4 > 10){
+            alert("nota invalida")
+            bim4 = parseFloat(prompt("Digite a nota do 4° bimestres: "))
+        }
+    
+
+        if((bim1 < 0 || bim1 > 10) || (bim2 < 0 || bim2 > 10) || (bim3 < 0 || bim3 > 10) || (bim4 < 0 || bim4 > 10)){
+            alert("Notas digitada errada ")
+        }else{
+            media = (bim1+bim2+bim3+bim4)/4
+
+            if(media >=7){
+            result = "aprovado"
+        }else if(media >=6.5 ){
+            result = "conselho"
+        }else if (media >=4 ){
+            result = "recuperação"
+        } else {
+            result = "reprovado"
+        }
+        alert("Aluno(a):"+nome+"\nna Matéria de: "+matéria+"\nTeve a média de: "+media+"\n e sua situação é: "+result)
+
+    }
+        
+       
+       
+        
+        
+        
+        
+
+
+    </script>
+    
+</body>
+</html>
