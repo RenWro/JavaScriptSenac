@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-04-24 - JS</title>
+    <!--Trabalhar vetores e matrizes-->
+    <script>
+
+        // Criando um vetor
+        let alunos = ["Fabio","Dias","Pablo","Rodrigo"]
+
+        console.log(alunos[3])
+
+        let quantidades = [12,33,11,17]
+
+        console.log(quantidades[0])
+
+        console.log(alunos[0]+" "+quantidades[3])
+
+        let vetor = new Array(3)
+
+        for(let i = 0; i<=2; i++){
+            vetor[i] = prompt("Digite um modelo de carro: ")
+        }
+
+        for(let i = 0; i<=2;i++){
+            console.log(vetor[i])
+
+        }
+        //criando vetor "aberto"
+        let frutas = []
+
+        frutas.push("Banana","Manga","Abacaxi","Tomate","Abacate")
+
+        frutas[5] = "Pêssego"
+
+        for(let i = 0; i<=(frutas.length - 1);i++){
+            console.log(frutas[i])
+        }
+        //para pegar a quantidade de indices do vetor
+        console.log(frutas.length)//7
+
+        //Criando uma matriz
+        let carrosAcessorios = [
+            ["fusca", "palio", "fiesta"],
+            ["banco de couro", "banco na cor marrom", "banco flanelado"],
+            ["trio elético", "trava nas 4 portas", "trio elético"]
+        ]
+
+        //primeiro valor percorre a linha
+        //segundo valor percorre a coluna
+
+        console.log(
+            carrosAcessorios[1][0] + " | " +
+            carrosAcessorios[0][1] + " | " +
+            carrosAcessorios[0][2] + " | "
+        )  //fusca, palio, fiesta
+
+        //let vetor = new Array(3)
+        let feira = new Array (3,4)
+
+        feira [0][0] = "Banana"
+
+        console.log(feira[0][0]) //[0][0] imprime apenas o primeiro caractere B
+        feira[0,1] = parseInt(prompt("Digite a quantidae de " + feira[0,0]))
+        console.log(feira[0,1])
+
+        //criando uma matriz tipo objeto
+
+        let celular = {
+            cor: "azul / preto ",
+            marca : "Xiaomi",
+            modelo: "Redmi",
+            biometria: true,
+            largura: 3,
+            altura:8
+        }
+
+        console.log(celular.modelo)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
