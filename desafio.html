@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio</title>
+</head>
+    <body>
+        <script>
+
+            /*
+            Crie um programa que após receber uma empresa de cuidadoria de pet´s, cadastre todos os animais.
+            receba tipo de animal entre cachorro, gato e pássaro, que pergunte pro usuário a raça, a idade,
+            o porte entre P-M-G ou GG, o nome do animal e que pergunte sobre o dono o nome nome do animal e
+            que pergunte sobre o dono o nome do tutor, telefone do tutor e endereço do tutor. Ao final,
+            ele vai imprimir todos os dados dos animais e os dados do tutor, classificando que se o tipo for
+            pássado, ele será colocado em viveiro, se for gato, na sala de gatos e se for cachorro, no parque
+            de cães.
+             */
+            let empresa, tipo, raca, temUmAno, idade, idadeTipo, cor, porte, nome, nomeT, telefoneDDD, telefoneT,enderecoT, local;
+
+            empresa =  prompt("Digite o nome da empresa: ");
+
+            do {
+                tipo = prompt("Digite o tipo de animal (cachorro, gato ou pássaro):");
+                tipo = tipo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); // Remove acentos, converte para minúsculas e normaliza a entrada
+            } while (tipo !== "cachorro" && tipo !== "gato" && tipo !== "passaro");
+
+            raca = prompt("Digite a raça do animal:");
+
+            temUmAno = prompt("O animal tem um ano ou mais? (sim/não)"); //Aqui pergunta se tem um ano pra imprimir a idade em meses ou anos e pra aceitar somente entradas numéricas
+            temUmAno = temUmAno.toLowerCase();
+
+            if (temUmAno === "sim") {
+                do {
+                    idade = prompt("Quantos anos tem o animal?");
+                } while (isNaN(idade) || idade.trim() === ""); //A propriedade global NaN é um valor especial que significa Not-A-Number (não é um número). O valor inicial de NaN é Not-A-Number - o mesmo valor de Number.NaN. Nos navegadores modernos, o NaN é uma propriedade somente leitura e não configurável. Mesmo quando não for este o caso, evite sobrescrevê-lo.
+                idadeTipo = "anos";
+            } else {
+                do {
+                    idade = prompt("Quantos meses tem o animal?");
+                } while (isNaN(idade) || idade.trim() === "");
+                idadeTipo = "meses";
+            }
+            cor = prompt("Digite a cor do animal:");
+
+            do {
+                porte = prompt("Digite o porte do animal (P, M, G, GG):");
+                porte = porte.toUpperCase();
+            } while (porte !== "P" && porte !== "M" && porte !== "G" && porte !== "GG");
+
+            nome = prompt("Digite o nome do animal:");
+            nomeT = prompt("Digite o nome do tutor do animal:");
+            telefoneDDD = prompt("Digite o DDD do telefone do tutor do animal(no formato XX):");
+            telefoneT = prompt("Digite o telefone do tutor do animal:");
+            enderecoT = prompt("Digite o endereço do tutor do animal:");
+
+            if (tipo === "cachorro") {
+                local = "parque de cães";
+            } else if (tipo === "gato") {
+                local = "sala de gatos";
+            } else if (tipo === "passaro") {
+                local = "viveiro";
+            }
+
+
+            let mensagem = `
+            Nome da Empresa: ${empresa}
+
+            Resumo dos Dados:
+            Tipo de Animal: ${tipo}
+            Raça: ${raca}
+            Idade: ${idade} ${idadeTipo}
+            Porte: ${porte}
+            Nome: ${nome}
+
+            Dados do Tutor:
+            Nome do Tutor: ${nomeT}
+            Telefone do Tutor: ${telefoneDDD} ${telefoneT}
+            Endereço do Tutor: ${enderecoT}
+
+            Localização do Animal:
+            O ${tipo} ${nome} será colocado no(a) ${local}.
+            `;
+
+            alert(mensagem);
+
+        </script>
+    </body>
+</html>
+
+
