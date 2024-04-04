@@ -82,7 +82,11 @@
     }
 
     // Passo 3 da Matriz: Gera a tabela com os dados dos animais e dos tutores.
-    let tabela = "<table border='1'><tr><th>Tipo</th><th>Raça</th><th>Idade</th><th>Cor</th><th>Porte</th><th>Nome do Animal</th><th>Nome do Tutor</th><th>DDD</th><th>Telefone</th><th>Endereço</th><th>Localização</th></tr>";
+    //let tabela = "<table border='1'><tr><th>Tipo</th><th>Raça</th><th>Idade</th><th>Cor</th><th>Porte</th><th>Nome do Animal</th><th>Nome do Tutor</th><th>DDD</th><th>Telefone</th><th>Endereço</th><th>Localização</th></tr>";
+    //let tabela = "<table border='1'><tr><th style='background-color: #ADD8E6;'>Tipo</th><th style='background-color: #ADD8E6;'>Raça</th><th style='background-color: #ADD8E6;'>Idade</th><th style='background-color: #ADD8E6;'>Cor</th><th style='background-color: #ADD8E6;'>Porte</th><th style='background-color: #ADD8E6;'>Nome do Animal</th><th style='background-color: #ADD8E6;'>Nome do Tutor</th><th style='background-color: #ADD8E6;'>DDD</th><th style='background-color: #ADD8E6;'>Telefone</th><th style='background-color: #ADD8E6;'>Endereço</th><th style='background-color: #ADD8E6;'>Localização</th></tr>";
+    let tabela = "<table border='1' style='font-family: Arial;'><tr><th style='background-color: #ADD8E6;'>Tipo</th><th style='background-color: #ADD8E6;'>Raça</th><th style='background-color: #ADD8E6;'>Idade</th><th style='background-color: #ADD8E6;'>Cor</th><th style='background-color: #ADD8E6;'>Porte</th><th style='background-color: #ADD8E6;'>Nome do Animal</th><th style='background-color: #ADD8E6;'>Nome do Tutor</th><th style='background-color: #ADD8E6;'>DDD</th><th style='background-color: #ADD8E6;'>Telefone</th><th style='background-color: #ADD8E6;'>Endereço</th><th style='background-color: #ADD8E6;'>Localização</th></tr>";
+
+
     for (let i = 0; i < animais.length; i++) {
         tabela += "<tr>";
         for (let j = 0; j < animais[i].length; j++) {
