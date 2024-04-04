@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio</title>
+</head>
+<body>
+<script>
+    /*
+        Crie um programa que após receber uma empresa de cuidadoria de pet´s, cadastre todos os animais.
+        Receba tipo de animal entre cachorro, gato e pássaro, que pergunte pro usuário a raça, a idade,
+        o porte entre P-M-G ou GG, o nome do animal e que pergunte sobre o dono o nome do animal e
+        que pergunte sobre o dono o nome do tutor, sobrenome do tutor, telefone do tutor e endereço do tutor. Ao final,
+        ele vai imprimir todos os dados dos animais e os dados do tutor, classificando que se o tipo for
+        pássaro, ele será colocado em viveiro, se for gato, na sala de gatos e se for cachorro, no parque
+        de cães. Depois, perguntará se deseja cadastrar mais um animal e, se sim, repetirá o processo.
+    */
+
+    let empresa = prompt("Digite o nome da empresa: ");
+    let continuar = 'sim';
+    let animais = []; //// Passo 1 da Matriz: Aqui a matriz é criada, para armazenar os dados dos animais e dos tutores.
+
+    while (continuar.toLowerCase() === 'sim') {
+        let tipo, raca, temUmAno, idade, idadeTipo, cor, porte, nome, nomeT, sobrenomeT, telefoneDDD, telefoneT, enderecoT, local;
+
+        do {
+            tipo = prompt("Digite o tipo de animal (cachorro, gato ou pássaro):");
+            // Remove acentos, converte para minúsculas e normaliza a entrada
+            tipo = tipo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        } while (!["cachorro", "gato", "passaro"].includes(tipo));
+
+        raca = prompt("Digite a raça do animal:");
+        // Aqui pergunta se tem um ano para imprimir a idade em meses ou anos e para aceitar somente entradas numéricas
+        temUmAno = prompt("O animal tem um ano ou mais? (sim/não)").toLowerCase();
+
+        if (temUmAno === "sim") {
+            idade = prompt("Quantos anos tem o animal?");
+            idadeTipo = "anos";
+        } else {
+            idade = prompt("Quantos meses tem o animal?");
+            idadeTipo = "meses";
+        }
+
+        cor = prompt("Digite a cor do animal:");
+
+        do {
+            porte = prompt("Digite o porte do animal (P, M, G, GG):").toUpperCase();
+        } while (!["P", "M", "G", "GG"].includes(porte));
+
+        nome = prompt("Digite o nome do animal:");
+        nomeT = prompt("Digite o nome do tutor do animal:");
+        sobrenomeT = prompt("Digite o sobrenome do tutor do animal:");
+
+
+        //Não utilizado mais: O método trim() em JavaScript é usado para remover espaços em branco do início e do fim de uma string. "Espaços em branco" incluem espaços comuns, tabulações, quebras de linha e outros caracteres de espaço em branco que podem não ser visíveis mas que contam como espaço no contexto da string.
+        //Não utilizado mais: O método trim() é bastante útil para limpar strings de entrada do usuário, onde espaços extras acidentalmente inseridos no início ou no final podem causar erros ou resultados inesperados durante o processamento dessas entradas.
+        //Não utilizado mais: Além do trim(), existem variações que permitem remover espaços somente do início (trimStart() ou trimLeft()) ou somente do fim (trimEnd() ou trimRight()) da string.
+
+        do {
+            telefoneDDD = prompt("Digite o DDD do telefone do tutor (no formato XX):");
+        } while (telefoneDDD.length !== 2 || isNaN(telefoneDDD));
+        //isNaN é uma função em JavaScript que determina se o valor passado é NaN (Not-a-Number, ou "Não é um Número"). Ela é usada para verificar se um valor, que se espera ser numérico, é de fato um número. isNaN retorna true se o valor é NaN ou não é um número; caso contrário, retorna false.
+        //É importante notar que isNaN tenta converter o valor passado para um número antes de fazer a verificação. Se esse valor pode ser coerentemente convertido para um número (como uma string numérica '123'), isNaN retornará false. Isso pode às vezes levar a resultados confusos, especialmente com valores que podem ser implicitamente convertidos para números, como strings numéricas ou o booleano true.
+        //Em contextos mais modernos, especialmente quando se quer garantir que um valor é estritamente numérico, muitos desenvolvedores preferem usar Number.isNaN() no lugar de isNaN(), pois Number.isNaN() não tenta converter o valor para um número antes da verificação, oferecendo uma forma mais estrita de verificar se o valor é realmente NaN.
+        //A propriedade global NaN é um valor especial que significa Not-A-Number (não é um número). O valor inicial de NaN é Not-A-Number - o mesmo valor de Number.NaN. Nos navegadores modernos, o NaN é uma propriedade somente leitura e não configurável. Mesmo quando não for este o caso, evite sobrescrevê-lo.
+        telefoneT = prompt("Digite o telefone do tutor:");
+
+        enderecoT = prompt("Digite o endereço do tutor:");
+
+        if (tipo === "cachorro") {
+            local = "parque de cães";
+        } else if (tipo === "gato") {
+            local = "sala de gatos";
+        } else {
+            local = "viveiro"; // Assumindo que só pode ser pássaro, já que outras opções foram excluídas.
+        }
+
+        // Passo 2 da Matriz:   Adiciona os dados coletados na matriz.
+        animais.push([tipo, raca, idade + " " + idadeTipo, cor, porte, nome, nomeT + " " + sobrenomeT, telefoneDDD, telefoneT, enderecoT, local]);
+
+        continuar = prompt("Deseja cadastrar mais um animal? (sim/não)");
+    }
+
+    // Passo 3 da Matriz: Gera a tabela com os dados dos animais e dos tutores.
+    let tabela = "<table border='1'><tr><th>Tipo</th><th>Raça</th><th>Idade</th><th>Cor</th><th>Porte</th><th>Nome do Animal</th><th>Nome do Tutor</th><th>DDD</th><th>Telefone</th><th>Endereço</th><th>Localização</th></tr>";
+    for (let i = 0; i < animais.length; i++) {
+        tabela += "<tr>";
+        for (let j = 0; j < animais[i].length; j++) {
+            tabela += "<td>" + animais[i][j] + "</td>";
+        }
+        tabela += "</tr>";
+    }
+    tabela += "</table>";
+
+    document.write(tabela); // Passo 4 da Matriz: Exibe a tabela na página.
+
+    alert("Agradecemos por utilizar o CadastraPet hoje.");
+</script>
+</body>
+</html>
