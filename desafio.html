@@ -29,8 +29,9 @@
         } else {
             do {    
                 idade = prompt("Quantos meses tem o animal?");
-            } while (isNaN(idade) || idade.trim() === "" || !idade.trim().match(/^\d+$/));
-            idadeTipo = "meses";
+            } while (isNaN(idade) || idade.trim() === "" || !idade.trim().match(/^\d+$/));  //isNaN é uma função em JavaScript que determina se o valor passado é NaN (Not-a-Number, ou "Não é um Número"). Ela é usada para verificar se um valor, que se espera ser numérico, é de fato um número. isNaN retorna true se o valor é NaN ou não é um número; caso contrário, retorna false.
+            idadeTipo = "meses";                                                            //É importante notar que isNaN tenta converter o valor passado para um número antes de fazer a verificação. Se esse valor pode ser coerentemente convertido para um número (como uma string numérica '123'), isNaN retornará false. Isso pode às vezes levar a resultados confusos, especialmente com valores que podem ser implicitamente convertidos para números, como strings numéricas ou o booleano true.
+                                                                                            //Em contextos mais modernos, especialmente quando se quer garantir que um valor é estritamente numérico, muitos desenvolvedores preferem usar Number.isNaN() no lugar de isNaN(), pois Number.isNaN() não tenta converter o valor para um número antes da verificação, oferecendo uma forma mais estrita de verificar se o valor é realmente NaN.
         }
 
         cor = prompt("Digite a cor do animal:");
