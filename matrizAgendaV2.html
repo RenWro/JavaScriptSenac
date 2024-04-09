@@ -9,9 +9,11 @@
 <script>
     let dados = ["nome", "data de nascimento", "whatsApp", "email"];
     let agenda = [];
-    let i = 0; // controla linha
+    let i = 0; // Controla a linha da matriz
+    let resp; // Declarando 'resp' aqui para garantir que está acessível posteriormente no loop
 
     do {
+        let entradaValida; // Usado para verificar a validade da entrada
         let nome = prompt("Digite " + dados[0]);
         let dataNascimento = prompt("Digite " + dados[1] + " no formato dd/MM/aaaa");
 
@@ -19,10 +21,11 @@
         // Loop para validação de entrada do WhatsApp apenas com números
         do {
             whatsApp = prompt("Digite " + dados[2] + " (somente números)");
-            if (!/^\d+$/.test(whatsApp)) { // Se a entrada não for válida, mostra mensagem de erro
+            entradaValida = /^\d+$/.test(whatsApp);
+            if (!entradaValida) { // Se a entrada não for válida, mostra mensagem de erro
                 alert("Erro. Por favor, insira um dado válido.");
             }
-        } while (!/^\d+$/.test(whatsApp)); // Verifica se é composto apenas por números
+        } while (!entradaValida); // Verifica se é composto apenas por números
         /*
         A expressão ^\d+$ é uma expressão regular (regex) usada para validar strings de texto, garantindo que elas contenham apenas dígitos numéricos. Vamos quebrar a expressão para entender melhor cada parte:
 
@@ -38,27 +41,28 @@
         // Loop para validação de entrada do e-mail contendo '@'
         do {
             email = prompt("Digite " + dados[3] + " (deve conter '@')");
-            if (!email.includes('@')) { // Se a entrada não for válida, mostra mensagem de erro
+            entradaValida = email.includes('@');
+            if (!entradaValida) { // Se a entrada não for válida, mostra mensagem de erro
                 alert("Erro. Por favor, insira um dado válido.");
             }
-        } while (!email.includes('@')); // Repete até que uma entrada válida seja fornecida
+        } while (!entradaValida); // Repete até que uma entrada válida seja fornecida
 
+        // Armazenando os dados na matriz agenda
         agenda[i] = [nome, dataNascimento, whatsApp, email];
-        i++; // Incrementa o índice para controlar a linha da matriz
+        i++; // Incrementa para a próxima linha
 
-        let resp;
         // Loop para validação da resposta sobre cadastrar outra pessoa
         do {
             resp = prompt("Cadastrar outra pessoa: \n(1) - sim.\n(2) - não.").toLowerCase();
-            if (!["1", "sim", "2", "não"].includes(resp)) { // Se a entrada não for válida, mostra mensagem de erro
+            if (!["1", "sim", "2", "não"].includes(resp)) { // Aceita variações de sim e não
                 alert("Erro. Por favor, insira um dado válido.");
+            } else {
+                // Sair do loop de validação se a resposta for válida
+                break;
             }
-        } while (!["1", "sim", "2", "não"].includes(resp)); // Repete até que uma entrada válida seja fornecida
-
-        // Converte a resposta para valor numérico esperado (1 ou 2) para compatibilidade com o loop
-        resp = ["1", "sim"].includes(resp) ? 1 : 2;
-
-    } while (resp === 1);
+        } while (true);
+        // Continuar enquanto a resposta for "1" ou "sim"
+    } while (resp === "1" || resp === "sim");
 
     console.log(agenda);
 
@@ -68,7 +72,8 @@
             agenda[l][0] + " | " +
             agenda[l][1] + " | " +
             agenda[l][2] + " | " +
-            agenda[l][3] + " | <br>");
+            agenda[l][3] + " | <br>"
+        );
     }
 </script>
 </body>
