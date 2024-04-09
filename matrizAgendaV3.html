@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando Matrizes Agenda 3</title>
+    <style>
+        /* Aplica a fonte Arial para todo o corpo do documento */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Estiliza a tabela para melhorar a apresentação */
+        table {
+            width: 100%; /* Faz a tabela ocupar a largura total da página */
+            border-collapse: collapse; /* Remove o espaçamento entre as células */
+        }
+        th, td {
+            border: 1px solid black; /* Adiciona borda às células */
+            text-align: left; /* Alinha o texto à esquerda */
+            padding: 8px; /* Adiciona um espaço interno nas células */
+        }
+        th {
+            background-color: #f4cccc; /* Adiciona uma cor de fundo para o cabeçalho */
+        }
+    </style>
+</head>
+<body>
+<script>
+    let dados = ["nome", "data de nascimento", "whatsApp", "email"];
+    let agenda = [];
+    let i = 0; // Controla a linha da matriz
+    let resp; // Declarando 'resp' aqui para garantir que está acessível posteriormente no loop
+
+    do {
+        let entradaValida; // Usado para verificar a validade da entrada
+        let nome = prompt("Digite " + dados[0]);
+        let dataNascimento;
+        do {
+            dataNascimento = prompt("Digite " + dados[1] + " no formato ddMMaaaa");
+            entradaValida = /^\d+$/.test(dataNascimento);
+            if (!entradaValida) { // Se a entrada não for válida, mostra mensagem de erro
+                alert("Erro. Por favor, insira um dado válido.Dica: não é necessário utilizar /.");
+            }
+        } while (!entradaValida); // Verifica se é composto apenas por números
+
+        let whatsApp;
+        // Loop para validação de entrada do WhatsApp apenas com números
+        do {
+            whatsApp = prompt("Digite " + dados[2] + " (somente números)");
+            entradaValida = /^\d+$/.test(whatsApp);
+            if (!entradaValida) { // Se a entrada não for válida, mostra mensagem de erro
+                alert("Erro. Por favor, insira um dado válido. Dica: Insira somente número, sem parênteses.");
+            }
+        } while (!entradaValida); // Verifica se é composto apenas por números
+        /*
+        A expressão ^\d+$ é uma expressão regular (regex) usada para validar strings de texto, garantindo que elas contenham apenas dígitos numéricos. Vamos quebrar a expressão para entender melhor cada parte:
+
+        1 - ^ - Este é o caractere de ancoragem que corresponde ao início da string. Ele garante que a correspondência comece a partir do primeiro caractere da string.
+        2 - \d - Esta é uma classe de caracteres especiais em regex que corresponde a qualquer dígito numérico (0-9). É equivalente a [0-9].
+        3 - + - Este quantificador corresponde a uma ou mais ocorrências do caractere ou padrão imediatamente anterior a ele. Neste caso, ele se aplica ao \d, significando que a string deve ter um ou mais dígitos.
+        4 - $ - Este é o caractere de ancoragem que corresponde ao final da string. Ele assegura que a correspondência termine no último caractere da string.
+
+         .test = O método .test() é um método em JavaScript aplicável a objetos de expressão regular (regex). Ele é usado para testar a presença de um padrão em uma string. Se a string testada corresponder ao padrão da expressão regular, .test() retorna true; caso contrário, retorna false.
+         */
+
+        let email;
+        // Loop para validação de entrada do e-mail contendo '@'
+        do {
+            email = prompt("Digite " + dados[3] + " (deve conter '@')");
+            entradaValida = email.includes('@');
+            if (!entradaValida) { // Se a entrada não for válida, mostra mensagem de erro
+                alert("Erro. Por favor, insira um dado válido. Dica: email precisa conter @.");
+            }
+        } while (!entradaValida); // Repete até que uma entrada válida seja fornecida
+
+        // Armazenando os dados na matriz agenda
+        agenda[i] = [nome, dataNascimento, whatsApp, email];
+        i++; // Incrementa para a próxima linha
+
+        // Loop para validação da resposta sobre cadastrar outra pessoa
+        do {
+            resp = prompt("Cadastrar outra pessoa: \n(1) - sim.\n(2) - não.").toLowerCase();
+            if (!["1", "sim", "2", "não", "nao"].includes(resp)) { // Aceita variações de sim e não, incluindo "nao"
+                alert("Erro. Por favor, insira um dado válido.");
+            } else {
+                // Sair do loop de validação se a resposta for válida
+                break;
+            }
+        } while (true);
+        // Continuar enquanto a resposta for "1" ou "sim"
+    } while (resp === "1" || resp === "sim");
+
+    // Exibe os dados coletados na página usando uma tabela HTML
+    document.write('<table><tr><th>Nome</th><th>Data de Nascimento</th><th>WhatsApp</th><th>Email</th></tr>');
+    for (let l = 0; l < agenda.length; l++) {
+        document.write(`<tr><td>${agenda[l][0]}</td><td>${agenda[l][1]}</td><td>${agenda[l][2]}</td><td>${agenda[l][3]}</td></tr>`);
+    }
+    document.write('</table>');
+</script>
+</body>
+</html>
