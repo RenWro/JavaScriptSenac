@@ -1,0 +1,61 @@
+/*
+* Programa - menu responsivo + modal PopUp
+* Autoria: Ren Wrobleski
+* Licença: GNU
+* Data: 11/04/2024
+* versão: V1.0
+ */
+
+/************** Importando arquivo externo */
+
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+
+ O uso de "primary", "secondary" (e até "tertiary", para terciário, se necessário) ajuda a organizar e padronizar
+ o uso de fontes em um projeto, tornando o design mais coeso e a manutenção do código mais fácil.
+
+
+--ff-primary
+--ff-primary é uma variável CSS que você definiu para armazenar a família de fontes primária do seu projeto.
+O termo "primary" (primário) sugere que esta será a fonte mais usada através do site ou aplicativo, geralmente
+aplicada a elementos de texto mais impactantes ou importantes, como títulos (h1, h2, h3, h4, h5).
+Neste caso, você escolheu "Roboto.
+
+--ff-secondary
+--ff-secondary é uma variável CSS para a família de fontes secundária. "Secondary" (secundário) indica que esta
+fonte é usada menos frequentemente que a primária, talvez em textos complementares ou de menor destaque, como
+corpo de texto, legendas, ou informações secundárias.
+"Open Sans" foi designado como a fonte secundária.
+
+--ff-tertiary
+--ff-tertiary poderia ser usada para elementos que requerem uma diferenciação estilística adicional, que não
+se encaixam na hierarquia ou estilo das fontes primária e secundária. Por exemplo, pode ser usada para botões,
+citações, texto de destaque, elementos de interface do usuário (UI), ou qualquer outro elemento que beneficie
+de uma identidade visual distinta. A escolha da fonte terciária depende da necessidade do projeto e do desejo
+de criar contrastes visuais ou complementaridades com as fontes primária e secundária.*/
+
+/************** Criando variáveis */
+:root{
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --fc-title: #49a6e9;
+    --fc:#00f;
+    --spacing:0.20rem;
+}
+/********************* */
+body{
+    font-family: var(--ff-secondary);
+    color: var(--fc);
+    line-height:1.5;
+    font-size: 0.875rem;
+}
+a{text-decoration: none}
+a, img{display: block}
+h1,h2,h3,h4,h5, h6 {
+    font-family: var(--ff-primary);
+    color: var(--fc-title);
+    letter-spacing: var(--spacing);
+}css
