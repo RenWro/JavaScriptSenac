@@ -1,0 +1,250 @@
+/**
+ * 1. Altera a família de fontes padrão em todos os navegadores (navegadores opinionated).
+ * 2. Impede ajustes de tamanho de fonte após mudanças de orientação no IE e iOS.
+ */
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    font-family: serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove o fundo cinza em links ativos no IE 10.
+ * 2. Remove lacunas na sublinhado de links no iOS 8+ e Safari 8+.
+ */
+a {
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * Remove o contorno em links focados quando também estão ativos ou com hover
+ * em todos os navegadores (navegadores opinionated).
+ */
+a:active,a:hover {outline-width: 0}
+
+/* Semântica de texto
+   ========================================================================== */
+/**
+ * 1. Remove a borda inferior no Firefox 39-.
+ * 2. Adiciona a decoração de texto correta no Chrome, Edge, IE, Opera e Safari.
+ */
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Impede a aplicação duplicada de `bolder` pela próxima regra no Safari 6.
+ */
+b,strong {font-weight: inherit}
+
+/**
+ * Adiciona o peso de fonte correto no Chrome, Edge e Safari.
+ */
+b,strong {font-weight: bolder}
+
+/**
+ * Adiciona o estilo de fonte correto no Android 4.3-.
+ */
+dfn {font-style: italic}
+
+/**
+ * Corrige o tamanho de fonte e margem em elementos `h1` dentro dos contextos `section` e
+ * `article` no Chrome, Firefox e Safari.
+ */
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Adiciona o fundo correto e cor no IE 9-.
+ */
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+/**
+ * Adiciona o tamanho de fonte correto em todos os navegadores.
+ */
+small {font-size: 80%}
+
+/**
+ * Impede que elementos `sub` e `sup` afetem a altura da linha em
+ * todos os navegadores.
+ */
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {bottom: -0.25em}
+sup {top: -0.5em}
+/* Conteúdo embutido
+   ========================================================================== */
+/**
+ * Remove a borda em imagens dentro de links no IE 10-.
+ */
+img {border-style: none}
+
+/**
+ * Esconde o overflow no IE.
+ */
+svg:not(:root) {overflow: hidden}
+
+/* Agrupando conteúdo
+   ========================================================================== */
+/**
+ * 1. Corrige a herança e o dimensionamento de tamanho de fonte em todos os navegadores.
+ * 2. Corrige o dimensionamento estranho de fonte em `em` em todos os navegadores.
+ */
+code,kbd,pre,samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/**
+ * Adiciona a margem correta no IE 8.
+ */
+figure {margin: 1em 40px}
+
+/**
+ * 1. Adiciona o box-sizing correto no Firefox.
+ * 2. Mostra o overflow no Edge e no IE.
+ */
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+/* Formulários
+   ========================================================================== */
+/**
+ * 1. Muda propriedades de fonte para 'inherit' em todos os navegadores (navegadores opinionated).
+ * 2. Remove a margem no Firefox e Safari.
+ */
+button,input,select,textarea {
+    font: inherit; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/**
+ * Restaura o peso de fonte desconfigurado pela regra anterior.
+ */
+optgroup {font-weight: bold}
+
+/**
+ * Mostra o overflow no IE.
+ * 1. Mostra o overflow no Edge.
+ */
+button,input {overflow: visible}
+
+/**
+ * Remove a herança de transformação de texto no Edge, Firefox e IE.
+ * 1. Remove a herança de transformação de texto no Firefox.
+ */
+button,select {text-transform: none}
+
+/**
+ * 1. Impede um bug do WebKit onde (2) destrói controles nativos `audio` e `video`
+ *    no Android 4.
+ * 2. Corrige a incapacidade de estilizar tipos clicáveis no iOS e Safari.
+ */
+button,html [type="button"],[type="reset"],[type="submit"] {-webkit-appearance: button}
+
+/**
+ * Remove a borda interna e padding no Firefox.
+ */
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/**
+ * Restaura os estilos de foco removidos pela regra anterior.
+ */
+button:-moz-focusring,[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {outline: 1px dotted ButtonText}
+
+/**
+ * Muda a borda, margem e padding em todos os navegadores (navegadores opinionated).
+ */
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Corrige o envolvimento de texto no Edge e no IE.
+ * 2. Corrige a herança de cor de elementos `fieldset` no IE.
+ * 3. Remove o padding para que os desenvolvedores não sejam pegos de surpresa quando zerarem
+ *    os elementos `fieldset` em todos os navegadores.
+ */
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+}
+
+/**
+ * Remove a scrollbar vertical padrão no IE.
+ */
+textarea {overflow: auto}
+
+/**
+ * 1. Adiciona o box-sizing correto no IE 10-.
+ * 2. Remove o padding no IE 10-.
+ */
+[type="checkbox"],[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * Corrige o estilo do cursor de botões de incremento e decremento no Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button {height: auto}
+
+/**
+ * 1. Corrige a aparência estranha no Chrome e Safari.
+ * 2. Corrige o estilo de contorno no Safari.
+ */
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove o padding interno e botões de cancelar no Chrome e Safari no OS X.
+ */
+[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+
+/**
+ * Corrige o estilo de texto dos placeholders no Chrome, Edge e Safari.
+ */
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+}
+
+/**
+ * 1. Corrige a incapacidade de estilizar tipos clicáveis no iOS e Safari.
+ * 2. Muda propriedades de fonte para 'inherit' no Safari.
+ */
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
