@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9 - Formulário</title>
+    <!-- Link para pegar os ícones para uso no código ícones em SVG-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- A mensagem "missing locally stored library" é um alerta indicando que a biblioteca usada, no caso o Font
+    Awesome via CDN (Content Delivery Network), não está armazenada localmente no seu projeto. Isso significa que
+    seu código depende de uma fonte externa para carregar essa biblioteca.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+
+        <!-- O IntelliJ IDEA e outros editores de código muitas vezes alertam sobre a "missing label" para campos de
+        entrada em formulários HTML para garantir que a acessibilidade seja mantida. Em HTML, cada <input> em um
+        formulário deve ter uma etiqueta associada que descreva sua função. Isso é especialmente importante para
+        usuários que dependem de tecnologias assistivas, como leitores de tela.
+
+       Após o elemento <label> é necessário associar explicitamente cada <label> aos respectivos <input> usando o
+       atributo for. Esse atributo deve conter o valor do id do <input> a que se refere. Note que no último campo,
+       o id do input e o valor do for do label correspondente devem ser iguais e respeitar a mesma capitalização. -->
+
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o seu Nome" required>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Digite o seu Email" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" id="telefone" placeholder="Digite o seu Telefone" required>
+
+        <label for="whatsapp">WhatsApp</label>
+        <input type="text" name="WhatsApp" id="whatsapp" placeholder="Digite o seu WhatsApp" required>
+
+        <button name = 'enviar' id="btnEnviar">Enviar</button>
+        <script src="JS/js-aula09.js" language="JavaScript" type="text/javascript" charset="UTF-8"></script>
+
+    </form>
+    <div class = "msg-error"> </div>
+</body>
+</html>
